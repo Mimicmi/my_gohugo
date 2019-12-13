@@ -1,0 +1,59 @@
+<head>
+	{{ partial "head.html" . }}
+</head>
+<body>
+	{{ partial "header.html" . }}
+	{{ partial "asidebar.html" . }}
+	<br/>
+	<div class="eventorganization">
+		<div class="cadreevent">
+			<div class="photos">
+				<img src="{{ .Params.photo }}" width=50% height: auto>
+			</div>
+			<h2>{{ .Title }}</h2>
+			<h4>Domaine: {{ .Param "domain" }}</h4>
+			<h4>Adresse: {{ .Param "address" }}</h4>
+			<h4>{{ .Param "description" }}</h4>
+			<h2> Futurs évènements de l'association</h2>
+			{{ $nomassociation:= .Title }}
+			{{ range (where .Site.RegularPages "Section" "eq" "events").ByParam "when" }}
+			
+			{{ if lt (dateFormat "2006 01 02" now) (dateFormat "2006 01 02" .Params.when)}}
+			{{ if eq .Params.association $nomassociation }}
+			<h2>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+			</h2>
+			<h4>{{ dateFormat "02 Jan 06 15:04 -0700" .Params.when }}</h4>
+			<h4>{{ .Param "label" }}</h4>
+			{{ end }}
+			
+			{{ end }}
+			{{ end }}
+			<div class="cache">
+				<input type="button" class="boutonCache" value="Afficher/Masquer anciens évènements de l'association" onclick="ouvrirFermerCache(this);" />
+				<div class="contenuCache">
+					<h2>Anciens évènements de l'association</h2>
+					{{ $nomassociation:= .Title }}
+					{{ range ((where .Site.RegularPages "Section" "eq" "events").ByParam "when").Reverse }}
+					{{ if eq .Type "events" }}
+					{{ if gt (dateFormat "2006 01 02" now) (dateFormat "2006 01 02" .Params.when)}}
+					{{ if eq .Params.association $nomassociation }}
+					{{ if not .Params.draft }}
+					<h2>
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+					</h2>
+					<h4>{{ dateFormat "02 Jan 06 15:04 -0700" .Params.when }}</h4>
+					<h4>{{ .Param "label" }}</h4>
+				</div>
+				{{ end }}
+				{{ end }}
+				{{ end }}
+				{{ end }}
+				{{ end }}
+			</div>
+		</div>
+	</div>
+	<footer>
+		{{ partial "footer.html" . }}
+	</footer>
+	

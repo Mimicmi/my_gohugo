@@ -1,0 +1,277 @@
+body {
+	margin: 0px;
+}
+
+#photoaccueil {
+	z-index: -1;
+	text-align: left;
+}
+
+.photos {
+	text-align: center;
+}
+
+.eventorganization {
+	text-align: center;
+}
+.titles {
+	text-align: center;
+}
+
+.pastorganization {
+	text-align: center !important;
+}
+
+.cadreevent {
+	border:1px solid black;
+	width: 50%;
+	margin-left: 25%;
+	background-color: #f3f3f3;
+}
+
+.townhalltext {
+	text-align: justify;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+hr {
+	width: 75%;
+}
+/* Conteneur Navbar */
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial;
+	background: url("https://paysages.photos/wp-content/uploads/2017/09/image-paysage-paris-2-1-1024x342.jpg") no-repeat;
+	background-size: cover;
+}
+
+/*Liens dans la navbar */
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* Menu déroulant container */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+/* Bouton deroulant */
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; /* Important pour les tel mobiles pour alig vertical */
+	margin: 0; /* idem */
+}
+
+/* fond couleur navbar */
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: red;
+}
+
+/* Bouton déroulant (cache par defaut) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Liens dans le menu deroulant */
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+/* ajout fond gris sur liens menu deroulant */
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+/* Affiche le menu déroulant quand on passe la souris dessus */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.navbar #search {
+	background-color: #ffffff;   /* Couleur de fond */
+	border-style: solid;   /* Style de la bordure */
+	border-width: 1px;   /* Epaisseur de la bordure */
+	border-color: #ffffff;   /* Couleur de la bordure */
+	padding: 5px 5px 5px 5px;
+}
+
+/* Aside bar */
+.sidebar {
+	height: 100%; /* 100% de la taille*/
+	width: 0; /* pour changer la taille avec le javascript*/
+	position: fixed; /* reste à sa place */
+	z-index: 1; /* Reste en haut */
+	top: 0;
+	left: 0;
+	background-color: #333;
+	overflow-x: hidden; /* Enlève le scrolling horizontal*/
+	padding-top: 60px; /* Place 60px du haut*/
+	transition: 0.5s; /* 0.5s d'animation pour afficher le menu aside */
+	background: url("https://i3.wp.com/www.abdrive-vtc.com/wp-content/uploads/2018/01/paris-1630x860.jpg") no-repeat; /* img de fond */
+	background-size: cover;
+}
+
+.searchorganization {
+	margin-left: 5%;
+	margin-right: 5%;
+	z-index: 1;
+}
+/* Liens dans la sidebar */
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+}
+
+/* Quand on passe la souris sur le lien : change la couleur */
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+/* Position de la "croix" pour fermer le bouton */
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+} 
+
+/* Bouton pour ouvrir l'aside bar */
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #fff;
+	color: black;
+	padding: 10px 15px;
+	border: none;
+	float: left;
+	z-index: 1;
+}
+
+.openbtn:hover {
+	background-color: rgb(255, 0, 0);
+}
+
+/* Sur les petits écrans, quand la hauteur est inférieure à 450px, change le style de l'asidebar (moins padding & font) */
+@media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
+}
+
+/* Footer */
+.footer {
+	height:auto;
+	bottom: 0;
+	width: 100%;
+	color: black;
+	background: url("https://www.discoverwalks.com/blog/wp-content/uploads/2015/07/paris-at-night-big.jpg") ;
+	background-size: cover;
+	
+}
+
+/* Footer calendrier */
+
+.maps {
+	float: center !important;
+}
+
+/* Formulaire de contacte */
+.contactform {
+	float: center !important;
+}
+
+/* Telephone mairie */
+.contactphone {
+	margin-left: auto;
+	margin-right: auto;
+	float: top;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* cacher contenu des évènements passés de l'association (single) */
+
+/*Permet de cacher le bouton d'ajout d'event*/
+.bouton-cal {
+	display: none; 
+}
+div.cache {
+	padding: 20px 10px 10px 0px;
+	width: 100%;
+	position: relative;
+}
+div.cache input.boutonCache {
+	position: absolute;
+	top: -10px;
+	left: 0px;
+}
+div.cache div.contenuCache {
+	display: none;
+}
+
+.boutonCache {
+	color: #fff;
+	background-color: #343a40;
+	border-color: #343a40;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.boutonCache, select{
+	text-transform: none;
+}
+.boutonCache, input{
+	overflow: visible;
+}
+
+.boutonCache, input, optgroup, select, textarea{
+	margin-left: 5%;
+	margin-right: 5%;
+	font-family: inherit;
+}
+
+*, ::after, ::before{
+	box-sizing: border-box;
+}
+
+/* Calendrier */
+
+.calendarorganization {
+	text-align: center;
+}

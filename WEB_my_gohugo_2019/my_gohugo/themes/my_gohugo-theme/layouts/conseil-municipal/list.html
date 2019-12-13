@@ -1,0 +1,36 @@
+<body>
+	{{ partial "head.html" . }}
+	{{ partial "header.html" . }}
+	{{ partial "townhall.html" . }}
+	{{ partial "asidebar.html" . }}
+	<div class= "titles">
+		<br/>
+		<br/>
+		<h2>Conseil municipal</h2>
+	</div>
+	<div class="eventorganization">
+		{{ range first 10 .Data.Pages }}
+		{{ if eq .Type "conseil-municipal" }}
+		{{ if or (eq .Params.role "Maire") (eq .Params.role "maire") }}
+		<hr/>
+		{{ partial "conseil-municipal.html" . }}
+		{{ end }}
+		{{ end }}
+		{{ end }}
+	</div>
+	
+	<div class="eventorganization">
+		{{ range first 10 .Data.Pages }}
+		{{ if eq .Type "conseil-municipal" }}
+		{{ if and (ne .Params.role "Maire") (ne .Params.role "maire")}}
+		<hr/>
+		{{ partial "conseil-municipal.html" . }}
+		{{ end }}
+		{{ end }}
+		{{ end }}
+	</div>
+</div>
+</body>
+<footer>
+	{{ partial "footer.html" . }}
+</footer>

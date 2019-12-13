@@ -1,0 +1,16 @@
+<head>
+	{{ partial "head.html" . }}
+	{{ partial "header.html" . }}
+	{{ partial "asidebar.html" . }}
+</head>
+<body>
+	<h2> {{ .Title }}</h2>
+	<h4> {{ .Param "firstNames" }}	{{ .Param "lastName" | upper }}</h4>
+	<h4> {{ .Param "role" }}</h4>
+	<div class="photos">
+		<img src="{{ .Params.photo }}" width="auto" height="300px" alt="{{ .Title }}">
+	</div>
+</body>
+<footer>
+	{{ partial "footer.html" . }}
+</footer>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2019-09-18T09:52:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/search/</loc>
+    <lastmod>2019-09-18T09:52:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/conseil-municipal/jose/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/associations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/associations/catin/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/conseil-municipal/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+  
+</urlset>

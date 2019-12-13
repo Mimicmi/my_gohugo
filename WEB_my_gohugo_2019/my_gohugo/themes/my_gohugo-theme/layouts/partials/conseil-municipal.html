@@ -1,0 +1,6 @@
+<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+<h3>{{ .Param "role" }}</h3>
+<div class="photos">
+	<img src="{{ .Params.photo }}" width=auto height=300px alt="Chargement...">
+</div>
+<h3>{{ .Param "firstNames" }} {{ .Param "lastName" | upper }}</h3>

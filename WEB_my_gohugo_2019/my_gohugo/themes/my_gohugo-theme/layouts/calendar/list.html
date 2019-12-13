@@ -1,0 +1,16 @@
+<body>
+	{{ partial "head.html" . }}
+	{{ partial "header.html" . }}
+	{{ partial "asidebar.html" . }}
+	<div class="calendarorganization">
+		<br/>
+		<br/>
+		<h1> Calendrier des évènements</h1>
+		{{ range first 10 .Data.Pages }}
+		<iframe src="https://calendar.google.com/calendar/embed?src=agmb27cjvb9egns0ghoarsq930%40group.calendar.google.com&ctz=Europe%2FParis" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		{{ end }}
+	</div>
+</body>
+<footer>
+	{{ partial "footer.html" . }}
+</footer>

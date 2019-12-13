@@ -1,0 +1,11 @@
+<body>
+    {{ partial "head.html" . }}
+    {{ partial "header.html" . }}
+    {{ partial "asidebar.html" . }}
+    <h1>Contact</h1>
+    {{ range first 10 .Data.Pages }}
+    <h4> Numéro de téléphone: 04 32 54 23 09</h4>
+    <h4> E-mail: mairieparis@3emearrondissement.fr</h4>
+    {{ end }}
+    {{ partial "footer.html" . }}
+</body>

@@ -1,0 +1,19 @@
+<head>
+	{{ partial "head.html" . }}
+</head>
+<body>
+	{{ partial "header.html" . }}
+	{{ partial "asidebar.html" . }}
+	<h2>{{ .Title }}</h2>
+	<h4>Adresse: {{ .Param "address" }} {{ .Param "postalCode" }} {{ .Param "city" }} {{ .Param "label" }}</h4>
+	<h4>Ville: {{ .Param "city" }}</h4>
+	<h4>Quand: {{ .Param "when" }}</h4>
+	<h4>{{ .Param "description" }}</h4>
+	<a href="/associations/{{ .Params.association | lower}}">{{ .Params.association }}</a>
+	<div class="photos">
+		<img src="{{.Params.photos}}" width="auto" height="300px" alt="{{ .Title }}">
+	</div>
+</body>
+<footer>
+	{{ partial "footer.html" . }}
+</footer>

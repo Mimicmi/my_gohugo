@@ -1,0 +1,27 @@
+<body>
+	{{ partial "head.html" . }}
+	{{ partial "header.html" . }}
+	{{ partial "asidebar.html" . }}
+	<div class="titles">
+		<br/>
+		<br/>
+		<h1>Tous les évènements</h1>
+	</div>
+	<div class="eventorganization">
+		{{ range (where .Site.RegularPages "Section" "eq" "events").ByParam "when" }}
+		{{ if not .Params.draft }}
+		<div class="cadreevent">
+			<h2>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+			</h2>
+			<h4>{{ dateFormat "02 Jan 06 15:04 -0700" .Params.when }}</h4>
+			<h4>{{ .Param "label" }}</h4>
+		</div>
+		<br/>
+		{{ end }}
+		{{ end }}
+	</div>
+</body>
+<footer>
+	{{ partial "footer.html" . }}
+</footer>

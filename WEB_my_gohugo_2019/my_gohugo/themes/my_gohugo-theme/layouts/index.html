@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<body>
+	<div id="photoaccueil">
+		<img src="https://paysages.photos/wp-content/uploads/2017/09/image-paysage-paris-2-1-1024x342.jpg" width="100%" height="300px">
+	</div>
+	{{ partial "asidebar.html" . }}
+	<div class="eventorganization">
+		<div class="contenuaccueil">
+			<div class="titles">
+				<br/>
+				<br/>
+				<h1>Accueil de la mairie du 3ème arrondissement de Paris</h1>
+			</div>
+			{{ $i := 0 }}
+			{{ range (where .Site.RegularPages "Section" "eq" "events").ByParam "when" }}
+			{{ if .Params.important }}
+			{{ if le (dateFormat "2006 01 02" now) (dateFormat "2006 01 02" .Params.when)}}
+			{{ if not .Params.draft }}
+			<div class="cadreevent">
+				<div class="photos">
+					<img src="{{ .Params.photos }}" width="100%" height="auto" alt="{{ .Title }}">
+				</div>
+				{{ if lt $i 10 }}
+				{{ $i = add $i 1 }}
+				<h1>
+					<a href="{{ .Permalink }}">{{ .Title }}</a>
+				</h1>
+				<h3>{{ .Param "label" }}</h3>
+				<h3>{{ dateFormat "02 Jan 06 15:04 -0700" .Params.when }}</h3>
+			</div>
+		</div>
+		<br/>
+		{{ end }}
+		{{ end }}
+		{{ end }}
+		{{ end }}
+		{{ end }}
+	</div>
+	{{ partial "footer.html" . }}
+</body>
+</html>

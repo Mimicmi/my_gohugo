@@ -1,0 +1,21 @@
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="searchorganization">
+        <form action="/search" id="searchthis" method="get">
+            <input id="search" name="q" type="text" placeholder="Mot clé" />
+        </form>
+    </div>
+    {{ range (where .Site.RegularPages "Section" "eq" "associations") }}
+    {{ if not .Params.draft }}
+    {{ if .Params.important }}
+    <h4>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h4>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</div>
+</div>
+<div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776; Rechercher</button>
+</div>

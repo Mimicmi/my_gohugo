@@ -1,0 +1,24 @@
+<body>
+	{{ partial "head.html" . }}
+	{{ partial "header.html" . }}
+	{{ partial "asidebar.html" . }}
+	<br/>
+	<br/>
+	<div class="titles">
+		<h1> Liste des associations</h1>
+	</div>
+	{{ range first 10 .Data.Pages }}
+	{{ if eq .Type "associations" }}
+	<div class="eventorganization">
+		<div class="cadreevent">
+			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			<h4>{{ .Param "domain"}}</h4>
+		</div>
+	</div>
+	<br/>
+	{{ end }}
+	{{ end }}
+</body>
+<footer>
+	{{ partial "footer.html" . }}
+</footer>
